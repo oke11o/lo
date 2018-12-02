@@ -196,765 +196,300 @@ $h1='bran<span class="lastD">d</span>'.$year;
 
 		</div><!---Вторая строка-->
 <!---- Домашнее задание НАЧАЛО--->
-<div class="dz2">
+<!--- Домащнее задание третье--->
+<div class="dz3">
 
 		<span class="Browse">
-			Домашнее задание 2 <br>
+			Домашнее задание 3 <br>
 			<?php 
-				echo "1.Объявить две целочисленные переменные $a и $b и задать им произвольные начальные значения. 
-				<br>Затем написать скрипт, который работает по следующему принципу:<br>";
-
-				$a=-3; $b=-1;
-
-				if ($a >=0 && $b >=0) { $c=$a-$b;} 
-				elseif ($a <0 && $b <0) { $c=$a*$b;} 
-				elseif (($a >=0 && $b <0) || ($a <0 && $b >=0)) { $c=$a+$b;} 
-				echo 'Результат='.$c.'<br><br>';
-				
-				echo "2.Присвоить переменной $а значение в промежутке [0..15]. <br>
-				С помощью оператора switch организовать вывод чисел от $a до 15.:<br>";
-	
-				echo 'Вариант со switch =';
-				$a=4;
-				switch ($a) {
-					case '0':
-				 		echo '0;&nbsp';
-					case '1':
-				 		echo '1;&nbsp';
-					case '2':
-				 		echo '2;&nbsp';
-				 	case '3':
-				 		echo '3;&nbsp';				 						 	
-					case '4':
-				 		echo '4;&nbsp';
-					case '5':
-				 		echo '5;&nbsp';
-					case '6':
-				 		echo '6;&nbsp';
-				 	case '7':
-				 		echo '7;&nbsp';	
-					case '8':
-				 		echo '8;&nbsp';
-					case '9':
-				 		echo '9;&nbsp';
-					case '10':
-				 		echo '10;&nbsp';
-				 	case '11':
-				 		echo '11;&nbsp';
-					case '12':
-				 		echo '12;&nbsp';
-					case '13':
-				 		echo '13;&nbsp';
-				 	case '14':
-				 		echo '14;&nbsp';				 						 	
-				 	case '15':
-				 		echo 'Закончили<br><br>';
-				 		break;
-				 	
-				 	default:
-				 		break;			 		
+				echo "1.С помощью цикла while вывести все числа в промежутке от 0 до 100, которые делятся на 3 без остатка:<br><br>";
+				$a = 0;
+				$n=100;
+				while ($a < $n) {
+				   if ($a % 3 == 0) {
+				       echo $a.PHP_EOL;
+				   }
+				   $a++;
 				}
-
-				echo 'Вариант с do..while =';
-				$a=4;
+				
+				echo "<br><br>2.С помощью цикла do…while написать функцию для вывода чисел от 0 до 10, чтобы результат выглядел так:<br><br>";
+				$numb = 0;
 				do {
-					Echo $a.';&nbsp';
-					$a++;
-				} while ($a<=15); echo 'Закончили<br><br>';
-
-				$a=2;
+				    if ($numb == 0) {
+				        echo "$numb - это ноль$nbsp";
+				    } elseif ($numb % 2 == 0) {
+				        echo "$numb - четное число$nbsp";
+				    } else {
+				        echo "$numb - нечетное число $nbsp";
+				    }
+				    $numb++;
+					} while ($numb <= 10);
 				
-   				for ($i = $a; $i++<15;) echo $i.'-';
-   				echo 'Вариант с for<br><br>';	
-   				
-
-				echo "3.Реализовать основные 4 арифметические операции в виде функций с двумя параметрами.<br>
-				<br>  Обязательно использовать оператор return:<br>";
-				$a=8;
-				$b=2;
-
-				function sum($a,$b){
-					$c=$a+$b;
-					return $c;
-				}				
-				function minus($a,$b){
-					$c=$a-$b;
-					return $c;
-				}
-				function ymnoj($a,$b){
-					$c=$a*$b;
-					return $c;
-				}
-				function delit($a,$b){
-					$c=$a/$b;
-					return $c;
-				}
-				echo sum($a,$b).';&nbsp';
-				echo minus($a,$b).';&nbsp';
-				echo ymnoj($a,$b).';&nbsp';
-				echo delit($a,$b).';&nbsp<br><br>';
-
-				echo "4.Реализовать функцию с тремя параметрами: function mathOperation($ arg1, $ arg2, $ operation), где 
-				$ arg1, $ arg2 – значения аргументов, $ operation – строка с названием операции. 
-				<br> В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 3) и вернуть полученное значение (использовать switch):<br>";
-				
-				$a=12;
-				$b=23;
-				$g='ymnoj';
-
-				function mathOperation($arg1, $arg2, $operation)
-				{
-					switch ($operation) {
-						case 'sum':
-							return sum($arg1,$arg2);
-							break;
-						case 'minus':
-							return minus($arg1,$arg2);
-							break;
-						case 'ymnoj':
-							return ymnoj($arg1,$arg2);
-							break;
-						case 'delit':
-							return delit($arg1,$arg2);
-							break;						
-						default:
-							break;
+				echo "<br><br>3.Объявить массив, в котором в качестве ключей будут использоваться названия областей, а в качестве значений – массивы с названиями городов из соответствующей области. Вывести в цикле значения массива, чтобы результат был таким:<br><br>";
+					
+					$regions = [
+					    'Новосибирская область' => [
+					        'Новосибирск',
+					        'Барабинск',
+					        'Бердск',
+					        'Болотное',
+					        'Искитим',
+					        'Карасук',
+					        'Каргат',
+					        'Куйбышев',
+					        'Купино',
+					        'Обь',
+					        'Татарск',
+					        'Тогучин',
+					        'Черепаново',
+					        'Чулым'					        
+					    ],
+					    'Омская область' => [
+					        'Омск',
+					        'Исилькуль',
+					        'Калачинск',
+					        'Называевск',
+					        'Тара',
+					        'Тюкалинск',
+					    ],
+					    'Тюменская область' => [
+					        'Тюмень',
+					        'Заводоуковск',
+					        'Ишим',
+					        'Тобольск',
+					        'Тюмень',
+					        'Ялуторовск'
+					    ],
+					];
+					foreach ($regions as $region=>$cities) {					 					   
+					    echo $region.':'.'<br>';
+					    $count = count($cities);
+					    foreach ($cities as $key => $city) {
+					        echo $city;
+					        if ($key != $count - 1) {
+					            echo ', ';
+					        } else {
+					            echo '.'.'<br>';
+					        }
+					    }
 					}
-
-					return false;
-				}
-
-				echo mathOperation($a,$b,$g).'<br><br>';
+				echo "<br><br>4.Объявить массив, индексами которого являются буквы русского языка, а значениями – соответствующие латинские буквосочетания (‘а’=> ’a’, ‘б’ => ‘b’, ‘в’ => ‘v’, ‘г’ => ‘g’, …, ‘э’ => ‘e’, ‘ю’ => ‘yu’, ‘я’ => ‘ya’):<br><br>";
 				
-				echo "5.Посмотреть на встроенные функции PHP.<br> Используя имеющийся HTML шаблон, вывести текущий год в подвале при помощи встроенных функций PHP.:<br>";
-				echo $year=date('Y').'&nbsp смотри футер))<br><br>';
-
-				echo "6.*С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power($ val, $ pow), где $ val – заданное число, $ pow – степень:<br>";
-
-				$a=2;
-				$b=5;				
-				
-				function power($val, $pow)
-				{
-					if($pow == 0){
- 						   return 1;
- 					}
- 					else if($pow < 0){
- 					  return power( 1/$val, -$pow);
- 					}
- 					return $val * power($val, $pow-1); 
+				function translit($string, $dir = 'rus') {
+				    $rus = [
+			        'а','б','в','г','д','е','ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у','ф','х','ц','ч','ш','щ','ъ','ы','ь','э','ю','я',
+			        'А','Б','В','Г','Д','Е','Ё','Ж','З','И','Й','К','Л','М','Н','О','П','Р','С','Т','У','Ф','Х','Ц','Ч','Ш','Щ','Ъ','Ы','Ь','Э','Ю','Я'
+			    			];
+			    	$eng = [
+			        'a','b','v','g','d','e','io','zh','z','i','y','k','l','m','n','o','p','r','s','t','u','f','h','ts','ch','sh','sht','a','i','y','e','yu','ya',
+			        'A','B','V','G','D','E','Io','Zh','Z','I','Y','K','L','M','N','O','P','R','S','T','U','F','H','Ts','Ch','Sh','Sch','A','I','Y','e','Yu','Ya'
+			    			];
+			    		switch ($dir) {
+			        	case 'rus':
+			        	    return str_replace($rus, $eng, $string);
+			        	case 'eng':
+			        	    return str_replace($eng, $rus, $string);
+			    		}
+			    	return false;
 				}
-
-				function power2($val, $pow)
-				{
-					$c=$val**$pow;
-					return $c; 
-				}
-
-				echo power($a,$b).';&nbsp требуемый вариант  :)<br>';
-				echo power2($a,$b).';&nbsp вариант с **  :)<br>';
-				echo pow($a, $b).';&nbspвстроенный php=вариант :)<br>';
-
-				echo "7.*Написать функцию, которая вычисляет текущее время и возвращает его в формате с правильными склонениями, например:<br>";
-
-				function plural_form($number,$after) {
-				  $cases = array(2,0,1,1,1,2);
-				  echo $before[($number%100>4 && $number%100<20)? 2: $cases[min($number%10, 5)]].' '.$number.' '.$after[($number%100				>4 && $number%100<20)? 2: $cases[min($number%10, 5)]];
-				}
-
-				function timeNOW()
-				{
-										
-					$ch=plural_form(
-						 $time1=date(' H ',time()),
-						  /* варианты написания для количества 1, 2 и 5 */
-						  array('час','часа','часов')
+					echo(
+						translit("Я не знаю что здесь написать", 'rus')
+					);
+					echo '<br>';
+					echo(
+						translit("london is the capital of Great Britan", 'eng')
 					);
 
-					$minyt=plural_form(
-						 $time2=date(' i ',time()),
-						  /* варианты написания для количества 1, 2 и 5 */
-						  array('минута','минуты','минут')
-					);	
+				echo "<br><br>5.Написать функцию, которая заменяет в строке пробелы на подчеркивания и возвращает видоизмененную строчку:<br><br>";
+				function probelTocherta($string)
+					{
+					    return str_replace(' ', '_', $string);
+					}
+				echo(
+					probelTocherta("Я ничего не понимаю в этой жизни")
+				);
 
-					return;
-				}
-				echo timeNOW().'&nbsp <-------смотри часики))<br><br>';
+				echo "<br><br>6.В имеющемся шаблоне сайта заменить статичное меню (ul - li) на генерируемое через PHP. Необходимо представить пункты меню как элементы массива и вывести их циклом. Подумать, как можно реализовать меню с вложенными подменю? Попробовать его реализовать.:<br><br>";
+				$menu = [
+				    [
+				        'name' => 'Home',
+				        'href' => '/',				        				        
+				    ],
+				    
+				    [
+				        'name' => 'Man',
+				        'href' => '/Man.php',
+				        'podmenu' => [
+				        	[
+				                'name' => 'Tees/Tank tops',
+				                'href' => '/Tees_Tank tops.php',				                
+				            ],
+							[
+				                'name' => 'Shirts/Polos',
+				                'href' => '/Shirts_Polos.php',				                
+				            ],
+							[
+				                'name' => 'Sweaters',
+				                'href' => '/Sweaters.php',				                
+				            ],
+				            [
+				                'name' => 'Sweatshirts/Hoodies',
+				                'href' => '/Sweatshirts_Hoodies.php',				                
+				            ],
+				            [
+				                'name' => 'Blazers',
+				                'href' => '/Blazers.php',				                
+				            ],
+				            [
+				                'name' => 'Jackets/vests',
+				                'href' => '/Jackets_vests.php',				                
+				            ],
+				           
+				        ],
+				    ],
+				    [
+				        'name' => 'Woman',
+				        'href' => '/Woman.php',
+				        'podmenu' => [
+				        	[
+				                'name' => 'Dresses',
+				                'href' => '/Dresses.php',				                
+				            ],
+							[
+				                'name' => 'Tops',
+				                'href' => '/Tops.php',				                
+				            ],
+							[
+				                'name' => 'Sweaters/Knits',
+				                'href' => '/Sweaters_Knits.php',				                
+				            ],
+				            [
+				                'name' => 'Jackets/Coats',
+				                'href' => '/Jackets_Coats.php',				                
+				            ],
+				            [
+				                'name' => 'Blazers',
+				                'href' => '/Blazers.php',				                
+				            ],
+				            [
+				                'name' => 'Denim',
+				                'href' => '/Denim.php',				                
+				            ],
+				            [
+				                'name' => 'Leggings/Pants',
+				                'href' => '/Leggings_Pants.php',				                
+				            ],
+				            [
+				                'name' => 'Skirts/Shorts',
+				                'href' => '/Skirts_Shorts.php',				                
+				            ],
+				            [
+				                'name' => 'Accessories',
+				                'href' => '/Accessories.php',				                
+				            ],
+				        ],
+				    ],
+				    [
+				        'name' => 'Kids',
+				        'href' => '/Kids.php',	
+				    ],
+				     [
+				        'name' => 'accoseriese',
+				        'href' => '/accoseriese.php',
+				    ],
+				     [
+				        'name' => 'featured',
+				        'href' => '/featured.php',
+				    ],
+				     [
+				        'name' => 'hot deals',
+				        'href' => '/hot_deals.php',	
+				    ],
+				 
+				];
 
-				echo "8.*Фибанначи:<br>";
 
-								
-				
-				function fibonacci($n,$prev1=1,$prev2=-1)
-				{
-					
-					$current=$prev1+$prev2;
-					echo "$current ";
-						if($n >= 1){
- 							   fibonacci($n-1, $current, $prev1);
- 						} 	
- 						
-				}
-				echo fibonacci(6).'-возвращает число ф...';
-							
-			?>
-		</span>
-</div>
-<div class="dz">
+				?>
+				<div class="containerDZ">	
+					<nav class="navbarDZ navbar-expand-lg"">
+						<ul class="navbar-nav mr-auto">
+                	<?php
+                		foreach ($menu as $i => $menuItem) {
+                    		$attrs = [];
+                    		if (array_key_exists('attrs', $menuItem)) {
+                    		    $attrs = $menuItem['attrs'];
+                    		}                                    
+                    		$podmenu = [];
+                    		if (isset($menuItem['podmenu'])) {
+                    		    $podmenu = $menuItem['podmenu'];
+                    		}
+                    ?>
+                    <li class="nav-item Home <?php if ($podmenu) { echo 'dropdown'; } ?>">
+                        <a class="nav-link Home <?php if ($podmenu) {echo 'dropdown-toggle'; } ?>"
+                        	
+                        	href="<?= $menuItem['href'] ?? ''; ?>"
+                        
+                        	<?php 
+                        	if ($podmenu) { echo 'id="dropdown'.$i.'" data-toggle="dropdown"';} 
+                        	?>
+                        >
+                            <?php echo $menuItem['name']; ?>                           
+                        </a>
+                        <?php if ($podmenu){ ?>
+                            <div class="dropdown-menu" aria-labelledby="<?php echo 'dropdown'.$i; ?>">
+                                	<?php 
+                                		foreach ($podmenu as $punkt) : 
+                                	?>
 
-		<span class="Lorem_ipsum_dolor_sit_amet">
-			Домашнее задание 1 <br>
-			<?php 
-			$a=1;
-			$b=2;
-			echo 'Была $a='.$a.'<br>';
-			echo 'Была $b='.$b.'<br>';
-
-			echo '<hr>';
-			$a+=+$b-$b=$a;
-
-			echo 'Стала $a='.$a.'<br>';
-			echo 'Стала $b='.$b.'<br>';
-			?>
-		</span>
-</div>
-<!---- Домашнее задание КОНЕЦ--->
-<!---- Слайдер НАЧАЛО--->
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="./img/index/slider.png" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="./img/index/slider.png" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="./img/index/slider.png" alt="Third slide">
-    </div>
-  </div>
- 
-</div>
-
-<div class="containerS">
-	<div class="container vcaf">
-		
-		 <div class="col mr-4">
-		 	<div class="row mb-4">
-		 		<img src="./img/index/hdfm.png" alt="hdfm">
-		 	</div>
-		 	<div class="row">
-		 		<img src="./img/index/lta.png" alt="lta">
-		 	</div>				 		
-		 </div>
+                                <a class="dropdown-item" href="<?php echo $punkt['href']; ?>">
+                            <?php echo $punkt['name'] ?></a>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php } ?>
+                    </li>
+                										<?php } ?>
+            			</ul>				  	
 	
-		
-		 <div class="col">
-		 	<div class="row mb-4">
-		 		<img src="./img/index/hdfw.png" alt="hdfw">
-		 	</div>
-		 	<div class="row" >
-		 		<img src="./img/index/nafk.png" alt="hdfm">
-		 	</div>				 		
-		 </div>				
-										 
-  	</div> 
+					</nav>
 
-<!---- Слайдер КОНЕЦ--->
-				
-					
-	<div class="Lorem">
-		<span class="Lorem_ipsum_dolor_sit_amet">
-			fetured items
-		</span><br>
-		<span class="Sed">
-			Shop for items based on what we featured in this week
+				</div>
+
+    			<?php 
+    			echo "<br>*7.Вывести с помощью цикла for числа от 0 до 9, НЕ используя тело цикла. То есть выглядеть должно так: for (…){ // здесь пусто}<br><br>";
+
+    				for ($c = 0; $c < 10; print $c++) {
+    				}
+
+    			echo "<br>*8.Повторить третье задание, но вывести на экран только города, начинающиеся с буквы «К»<br><br>";	
+				    foreach ($regions as $region=>$cities) {	
+				    echo $region.':'.'<br>';
+				    $CityK = [];
+				    foreach ($cities as $i => $city) {
+				        if (mb_substr($city, 0, 1) == 'К') {
+				            $CityK[] = $city;
+				        }
+				    }
+				    if (count($CityK)) {
+				        echo implode(',', $CityK).'.'.PHP_EOL;
+				    } else {
+				        echo 'нет городов на букву К'.PHP_EOL;
+				    }
+				    echo '<br>';
+					}	
+				echo "<br>*9.Объединить две ранее написанные функции в одну, которая получает строку на русском языке, производит транслитерацию и замену пробелов на подчеркивания (аналогичная задача решается при конструировании url-адресов на основе названия статьи в блогах)<br><br>";
+
+				function changeURL($string)
+					{
+					    return probelTocherta(translit($string, 'rus'));
+					}
+
+				echo(changeURL("Пожалуйста, посмотрите домашнее по заданному уроку"));
+
+
+				    		
+				?>
 		</span>
-	</div>
-					 
-	 <div class="container vcaf">
-		<div class="row">
-		 
-		  	<div class="col">
-		    	<div class="row-sm">
-		    		<div class="image_plus">
-		    			<img src="./img/prod/pr1.png" alt="pr1" class="prodv">
-		    			
-		    				<button type="button" class="btn5">
-		    					<span class="h2_text">
-		    						<img src="./img/prod/cartb.png" alt="cartb">
-		    						Add to Cart
-		    					</span>
-		    				
-		    				</button>
-					</div>
-		    	</div>
-		    	<div class="row-sm mt-2 mb-2">
-		    		<span class="Mango">Mango People T-shirt</span>
-		    	</div>
-		    	<div class="row-sm">
-		    		<div class="col flexP  pl-0 pr-3">
-		    			<div>
-		    				<span class="prod_price">52.00$</span>
-		    			</div>
-		    		
-					
-		    			<div class="hide_zvevda">
-  			  			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			</div>
-		    		</div>
-		 		</div>
-			</div>
-						
-		</div>
-		<div class="row">
-		 
-		  	<div class="col">
-		    	<div class="row-sm">
-		    		<div class="image_plus">
-		    			<img src="./img/prod/pr2.png" alt="pr2" class="prodv">
-		    			
-		    				<button type="button" class="btn5">
-		    					<span class="h2_text">
-		    						<img src="./img/prod/cartb.png" alt="cartb">
-		    						Add to Cart
-		    					</span>
-		    				
-		    				</button>
-					</div>
-		    	</div>
-		    	<div class="row-sm mt-2 mb-2">
-		    		<span class="Mango">Mango People T-shirt</span>
-		    	</div>
-		    	<div class="row-sm">
-		    		<div class="col flexP  pl-0 pr-3">
-		    			<div>
-		    				<span class="prod_price">52.00$</span>
-		    			</div>
-		    		
-					
-		    			<div class="hide_zvevda">
-  			  			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			</div>
-		    		</div>
-		 		</div>
-			</div>
-						
-		</div>
-
-		<div class="row">
-		 
-		  	<div class="col">
-		    	<div class="row-sm">
-		    		<div class="image_plus">
-		    			<img src="./img/prod/pr3.png" alt="pr3" class="prodv">
-		    			
-		    				<button type="button" class="btn5">
-		    					<span class="h2_text">
-		    						<img src="./img/prod/cartb.png" alt="cartb">
-		    						Add to Cart
-		    					</span>
-		    				
-		    				</button>
-					</div>
-		    	</div>
-		    	<div class="row-sm mt-2 mb-2">
-		    		<span class="Mango">Mango People T-shirt</span>
-		    	</div>
-		    	<div class="row-sm">
-		    		<div class="col flexP  pl-0 pr-3">
-		    			<div>
-		    				<span class="prod_price">52.00$</span>
-		    			</div>
-		    		
-					
-		    			<div class="hide_zvevda">
-  			  			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			</div>
-		    		</div>
-		 		</div>
-			</div>
-						
-		</div>
-
-		<div class="row">
-		 
-		  	<div class="col">
-		    	<div class="row-sm">
-		    		<div class="image_plus">
-		    			<img src="./img/prod/pr4.png" alt="pr4" class="prodv">
-		    			
-		    				<button type="button" class="btn5">
-		    					<span class="h2_text">
-		    						<img src="./img/prod/cartb.png" alt="cartb">
-		    						Add to Cart
-		    					</span>
-		    				
-		    				</button>
-					</div>
-		    	</div>
-		    	<div class="row-sm mt-2 mb-2">
-		    		<span class="Mango">Mango People T-shirt</span>
-		    	</div>
-		    	<div class="row-sm">
-		    		<div class="col flexP  pl-0 pr-3">
-		    			<div>
-		    				<span class="prod_price">52.00$</span>
-		    			</div>
-		    		
-					
-		    			<div class="hide_zvevda">
-  			  			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			</div>
-		    		</div>
-		 		</div>
-			</div>
-						
-		</div>
-
-
-	</div>	
-<!--второй ряд-->
-		<div class="container vcaf">
-		<div class="row">
-		 
-		  	<div class="col">
-		    	<div class="row-sm">
-		    		<div class="image_plus">
-		    			<img src="./img/prod/pr5.png" alt="pr5" class="prodv">
-		    			
-		    				<button type="button" class="btn5">
-		    					<span class="h2_text">
-		    						<img src="./img/prod/cartb.png" alt="cartb">
-		    						Add to Cart
-		    					</span>
-		    				
-		    				</button>
-					</div>
-		    	</div>
-		    	<div class="row-sm mt-2 mb-2">
-		    		<span class="Mango">Mango People T-shirt</span>
-		    	</div>
-		    	<div class="row-sm">
-		    		<div class="col flexP  pl-0 pr-3">
-		    			<div>
-		    				<span class="prod_price">52.00$</span>
-		    			</div>
-		    		
-					
-		    			<div class="hide_zvevda">
-  			  			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			</div>
-		    		</div>
-		 		</div>
-			</div>
-						
-		</div>
-		<div class="row">
-		 
-		  	<div class="col">
-		    	<div class="row-sm">
-		    		<div class="image_plus">
-		    			<img src="./img/prod/pr6.png" alt="pr6" class="prodv">
-		    			
-		    				<button type="button" class="btn5">
-		    					<span class="h2_text">
-		    						<img src="./img/prod/cartb.png" alt="cartb">
-		    						Add to Cart
-		    					</span>
-		    				
-		    				</button>
-					</div>
-		    	</div>
-		    	<div class="row-sm mt-2 mb-2">
-		    		<span class="Mango">Mango People T-shirt</span>
-		    	</div>
-		    	<div class="row-sm">
-		    		<div class="col flexP  pl-0 pr-3">
-		    			<div>
-		    				<span class="prod_price">52.00$</span>
-		    			</div>
-		    		
-					
-		    			<div class="hide_zvevda">
-  			  			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			</div>
-		    		</div>
-		 		</div>
-			</div>
-						
-		</div>
-
-		<div class="row">
-		 
-		  	<div class="col">
-		    	<div class="row-sm">
-		    		<div class="image_plus">
-		    			<img src="./img/prod/pr7.png" alt="pr7" class="prodv">
-		    			
-		    				<button type="button" class="btn5">
-		    					<span class="h2_text">
-		    						<img src="./img/prod/cartb.png" alt="cartb">
-		    						Add to Cart
-		    					</span>
-		    				
-		    				</button>
-					</div>
-		    	</div>
-		    	<div class="row-sm mt-2 mb-2">
-		    		<span class="Mango">Mango People T-shirt</span>
-		    	</div>
-		    	<div class="row-sm">
-		    		<div class="col flexP  pl-0 pr-3">
-		    			<div>
-		    				<span class="prod_price">52.00$</span>
-		    			</div>
-		    		
-					
-		    			<div class="hide_zvevda">
-  			  			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			</div>
-		    		</div>
-		 		</div>
-			</div>
-						
-		</div>
-
-		<div class="row">
-		 
-		  	<div class="col">
-		    	<div class="row-sm">
-		    		<div class="image_plus">
-		    			<img src="./img/prod/pr8.png" alt="pr8" class="prodv">
-		    			
-		    				<button type="button" class="btn5">
-		    					<span class="h2_text">
-		    						<img src="./img/prod/cartb.png" alt="cartb">
-		    						Add to Cart
-		    					</span>
-		    				
-		    				</button>
-					</div>
-		    	</div>
-		    	<div class="row-sm mt-2 mb-2">
-		    		<span class="Mango">Mango People T-shirt</span>
-		    	</div>
-		    	<div class="row-sm">
-		    		<div class="col flexP  pl-0 pr-3">
-		    			<div>
-		    				<span class="prod_price">52.00$</span>
-		    			</div>
-		    		
-					
-		    			<div class="hide_zvevda">
-  			  			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			<span class="zvezda3">&#9733;</span>
-		    			</div>
-		    		</div>
-		 		</div>
-			</div>
-						
-		</div>
-
-
-	</div>		
-			
-	<div class="Lorem">
-		<button type="button" class="btn btn-default dalee" data-toggle="dropdown"><span class="mydal">Brose all product </span> <span class="myacc">&#8594;</span></button>
-	</div>
-
-		<div class="cae"><img  src="./img/index/feature.png" alt="First slide"></div>
-		    
-		 
-
-
-
-<div class="niz">
-<img  class="nizcit" src="./img/index/more.png" alt="more">
-
-
-<div id="flexHN"><!---Первая строка-->
-	<div class="n1"> <!--- Левая часть верхней строки-->
-					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  			
-						 <div class="carousel-inner">
-						   <div class="carousel-item active">
-						     	<div class="floatl">
-						     		<img class="logos" src="./img/index/lico.png" alt="First slide">
-						     	</div>
-						    		<div class="citcit"> 
-						    			<span class="vest"> “Vestibulum quis porttitor dui! Quisque viverra nunc mi, 
-											a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”</span>
-											<br>
-											<br><span class="bin">Bir Burhan</span>
-											<br><span class="vest2">Dhaka, Bd</span>
-
-									</div>
-						   </div>
-						   <div class="carousel-item">
-						     	<div class="floatl">
-						     		<img class="logos" src="./img/index/lico.png" alt="slide 2">
-						     	</div>
-						    		<div class="citcit"> 
-						    			<span class="vest"> “Vestibulum quis porttitor dui! Quisque viverra nunc mi, 
-											a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”</span>
-											<br>
-											<br><span class="bin">Bir Burhan</span>
-											<br><span class="vest2">Dhaka, Bd</span>
-
-									</div>
-						   </div><div class="carousel-item">
-						     	<div class="floatl">
-						     		<img class="logos" src="./img/index/lico.png" alt="slide 3">
-						     	</div>
-						    		<div class="citcit"> 
-						    			<span class="vest"> “Vestibulum quis porttitor dui! Quisque viverra nunc mi, 
-											a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”</span>
-											<br>
-											<br><span class="bin">Bir Burhan</span>
-											<br><span class="vest2">Dhaka, Bd</span>
-
-									</div>
-						   </div>
-						 </div>
-						 <br>
-						<ol class="carousel-indicators">
-						   <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-						   <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-						   <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-						 </ol>
-					</div>
-    </div>
-    <div class="n1">
-		<div class="citcit2"> 
-			<span class="vest3"> Subscribe</span>
-			<br>
-			<span class="vest4"> FOR OUR NEWLETTER AND PROMOTION</span>
-		</div>
-		<form class="form-inline2">
- 				<div class="input-group mb-2 mr-sm-2">
- 				 
- 				  <input type="text" class="form-control2" id="inlineFormInputGroupUsername2" placeholder="Enter Your Email">
- 				  <button type="button" class="btn-default account2" data-toggle="dropdown"><span class="myacc">Subscribe</span></button>
-					
- 				</div>
-					
-		</form>
-    </div>
- </div>
- 
 </div>
-			
-
-
-
-
-
-<div class="container vcaf ot100">
-		<div class="row  w50">
-		 
-		  	<div class="col w100">
-		    	<div class="row-sm">
-					<img src="./img/index/logo.png" alt="logo" class="logo">
-					<span class="h1">bran<span class="lastD">d</span></span>
-		    	</div>
-		    	<div class="row-sm">
-		    		<span class="objectively"><br><br><br><br>
-Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate multidisciplinary materials before go forward benefits. Intrinsicly syndicate an expanded array of processes and cross-unit partnerships. 
-					</span>
-
-		    	</div>
-		    	<div class="row-sm">
-		    		<br>
-		    		<span class="objectively">
-Efficiently plagiarize 24/365 action items and focused infomediaries.
-Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.
-		    		</span>
-		    	</div>
-		    </div>	
-						
-		</div>
-		<div class="row bflex mt-4">
-			<div class="col w100">
-				<span class="lastD4">Company</span>
-			</div>
-				<div class="col w100">
-        <br><br>
-				<ul class="subnav">
-
-        			<li><a class="dropdown-item" href="#WDresses">Home</a></li>
-	        		<li><a class="dropdown-item" href="#WTops">Shop</a></li>
-	        		<li><a class="dropdown-item" href="#WSweaters">About</a></li>
-        			<li><a class="dropdown-item" href="#WJackets">How It Works</a></li>
-        			<li><a class="dropdown-item" href="#WBlazers">Contact</a></li>
-        		
-        		</ul>
-        		</div>
-		</div>
-		<div class="row bflex mt-4">
-			<span class="lastD4">information</span>
-			<div class="col w100">
-      	<br><br>
-				<ul class="subnav">
-
-        			<li><a class="dropdown-item" href="#WDresses">Tearms & Condition</a></li>
-	        		<li><a class="dropdown-item" href="#WTops">Privacy Policyp</a></li>
-	        		<li><a class="dropdown-item" href="#WSweaters">How to Buy</a></li>
-        			<li><a class="dropdown-item" href="#WJackets">How to Sell</a></li>
-        			<li><a class="dropdown-item" href="#WBlazers">Promotion</a></li>
-        		
-        		</ul>
-        		</div>
-		</div>
-		<div class="row bflex mt-4">
-			<span class="lastD4">shop category</span>
-			<div class="col w100">
-      <br><br>
-				<ul class="subnav">
-
-        			<li><a class="dropdown-item" href="#WDresses">Men</a></li>
-	        		<li><a class="dropdown-item" href="#WTops">Women</a></li>
-	        		<li><a class="dropdown-item" href="#WSweaters">Child</a></li>
-        			<li><a class="dropdown-item" href="#WJackets">Apparel</a></li>
-        			<li><a class="dropdown-item" href="#WBlazers">Browse All</a></li>
-        		
-        		</ul>
-        		</div>
-		</div>
-	
-
-
-</div>	
 
 		<footer>
 			<p>&#169; <?php echo $year; ?> -Brand All Rights Reserved</p>
