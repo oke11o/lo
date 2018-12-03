@@ -31,7 +31,7 @@ header{
 	border: 3px solid red;
 	background: skyblue;
 }
-.dz2, .dz3{
+.dz2, .dz3, .dz4{
 	margin: 100px auto 60px;
  	text-align: center;
 	width: 900px;
@@ -41,7 +41,9 @@ header{
 }
 .dz3{
 	height: 1300px;
-
+}
+.dz4{
+	height: 500px;
 }
 #flexH{
 
@@ -544,6 +546,11 @@ width: 260px;
 	width: 260px;
 	z-index: 5;
 }
+.prodv1{
+	height: 90px;
+	width: 60px;
+	z-index: 5;
+}
 .prodv:hover{
 	opacity: 0.5;
 }
@@ -617,7 +624,13 @@ position: relative;
 	background-color:rgba(89,87,87,0.5);
 
 }
+.image_plus1 {
+	position	: relative;
+	height: 90px;
+	width: 60px;
+	background-color:rgba(89,87,87,0.5);
 
+}
 .h2_text {
 	
   font-size: 13px;
