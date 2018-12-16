@@ -1,2 +1,0 @@
-/data/*.png.txt
-/ñonfig/config.php

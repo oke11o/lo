@@ -49,46 +49,49 @@ function dirToArray($dir) {
     return $result; 
 }
 
-function showgallery($dir) {
-            ?><div class="container vcaf">
-            <?php
-            $imgdir=dirToArray($dir);
-            foreach ($imgdir as $i => $imgdirS) { ?>
-            <div class="row-sm">
-                <div class="image_plus1">
-            <a href="<?php echo $dir.'/'.$imgdirS; ?>" target="_blank">
-                <img src="<?php echo $dir.'/'.$imgdirS; ?>" alt="<?= $i; ?>" class="prodv1">
-                <?= $imgdirS; ?>
-                <?= showclick($imgdirS); ?>
-            </a>
-                </div>
-            </div>                  
-            <?php        } ?>
-            </div><?php
 
-} 
-function showclick($dir){
-    $digits = 6;
-    //Определяет кол-во показываемых чисел – в этом случае 00000x.  
-    //$dir = str_replace(".png","", $dir);  
-    $filelocation="../data/$dir.txt";
-    //Имя файла счетчика. Если хотите изменить на другое, замените здесь и переименуйте .txt файл.
-    if (!file_exists($filelocation)) {
-    $newfile = fopen($filelocation,"w+");
-    $content=1;
-    fwrite($newfile, $content);
-    fclose($newfile);
+function getPageOpenCount() {
+    $filename = '../data/page_open_count.txt';
+    $count = 1;
+    if (file_exists($filename)) {
+        $count = (int) file_get_contents($filename);
+        $count++;
     }
-    $newfile = fopen($filelocation,"r");
-    $content = fread($newfile, filesize($filelocation));
-    fclose($newfile);
-    $newfile = fopen($filelocation,"w+");
-    if (!$c){
-    $content++;
+    file_put_contents($filename, $count);
+    return $count;
+}
+
+function sum($x, $y)
+{
+    return $x + $y;
+}
+function sub($x, $y)
+{
+    return $x - $y;
+}
+function mult($x, $y)
+{
+    return $x * $y;
+}
+function div($x, $y)
+{
+    if ($y == 0) {
+        return 'Деление на ноль невозможно.';
     }
-    fwrite($newfile, $content);
-    fclose($newfile);
-    echo "".sprintf ("%0"."$digits"."d",$content)."";
-    //Если вы хотите, чтобы какой либо текст был вокруг счетчика, заключите строку выше в цитатные кавычки (    quotation marks).
+    return $x / $y;
+}
+function mathOperation($a, $b, $op = '')
+{
+    switch ($op) {
+        case CALC_OPERATION_SUM:
+            return sum($a, $b);
+        case CALC_OPERATION_SUB:
+            return sub($a, $b);
+        case CALC_OPERATION_MULT:
+            return mult($a, $b);
+        case CALC_OPERATION_DIV:
+            return div($a, $b);
+    }
+    return sprintf('Неизвестная операция "%s"', $op);
 }
 ?>

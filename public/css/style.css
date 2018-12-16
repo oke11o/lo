@@ -31,7 +31,7 @@ header{
 	border: 3px solid red;
 	background: skyblue;
 }
-.dz2, .dz3, .dz4{
+.dz2, .dz3 {
 	margin: 100px auto 60px;
  	text-align: center;
 	width: 900px;
@@ -40,11 +40,10 @@ header{
 	background: skyblue;
 }
 .dz3{
-	height: 1300px;
-}
-.dz4{
 	height: 500px;
 }
+
+
 #flexH{
 
 	display: flex;
@@ -63,6 +62,10 @@ header{
 .vcart{
 	float: left;
 	position: relative;
+	height: 40px;
+	width: 30px;
+	height: 37px;
+
 	
 }
 .vca{

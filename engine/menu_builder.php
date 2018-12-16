@@ -90,10 +90,25 @@ return [
                         'name' => 'featured',
                         'href' => '/featured.php',
                     ],
-                     [
-                        'name' => 'hot deals',
-                        'href' => '/hot_deals.php', 
+                    [
+                         'name' => 'Товары',
+                         'href' => '/catalog.php',
+                         'podmenu' => [],
                     ],
+                    [
+                        'name' => 'reviews',
+                        'href' => '/reviews.php', 
+                    ],
+                    [
+                    'name' => 'Админка',
+                    'podmenu' => [
+                        [
+                          'name' => 'Каталог',
+                          'href' => '/admin/catalog/index.php',
+                          'podmenu' => [],
+                     ],
+        ],
+    ],
                  
         ];
 ?>
