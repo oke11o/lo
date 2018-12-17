@@ -4,7 +4,8 @@ CREATE TABLE `gallery` (
   `tip_gallery` varchar(50) NOT NULL,
   `way_gallery` varchar(250) NOT NULL,
   `size_gallery` int(8) NOT NULL,
-  `counter_gallery` varchar(11) NOT NULL
+  `counter_gallery` varchar(11) NOT NULL,
+  PRIMARY KEY (id_gallery)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `gallery` (`id_gallery`, `name_gallery`, `tip_gallery`, `way_gallery`, `size_gallery`, `counter_gallery`) VALUES
