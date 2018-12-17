@@ -1,5 +1,8 @@
 <?php
 require_once '../../../engine/init.php';
+if($user['role'] != 'admin') {
+    die('Недостаточно прав');
+}
 if ($_POST && isset($_POST['product_id'])) {
     $id = (int)$_POST['product_id'];
     if (deleteProduct($mysqlConnect, $id)) {

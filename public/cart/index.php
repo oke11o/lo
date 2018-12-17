@@ -11,6 +11,5 @@ foreach ($cart as $productId => $cartItem) {
     $cartTableData[] = $product;
     $cartTotalSum += $product['subtotal'];
 }
-$_SESSION['cartTableData']=$cartTableData;
 require ROOT_DIR.'templates/cart.php';
 ?>

@@ -1,3 +1,4 @@
+<?php if(!$security || $security == $user['role']): ?>
 <li class="nav-item Home <?php if ($podmenu) { echo 'dropdown'; } ?>">
     <a class="nav-link Home <?php if ($podmenu) {echo 'dropdown-toggle'; } ?>"
         
@@ -20,3 +21,4 @@
         </div>
     <?php } ?>
 </li>
+<?php endif ?>

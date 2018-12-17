@@ -101,6 +101,7 @@ return [
                     ],
                     [
                     'name' => 'Админка',
+                    'security' => 'admin',
                     'podmenu' => [
                         [
                           'name' => 'Каталог',

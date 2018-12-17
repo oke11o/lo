@@ -9,6 +9,7 @@
         if (isset($menuItem['podmenu'])) {
         $podmenu = $menuItem['podmenu'];
         }
+    $security = $menuItem['security'] ?? null;    
         include 'menu_li.php';
     }
     ?>
